@@ -32,10 +32,19 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Prénom</th>
                     <th>Nom</th>
+                    <th>Sexe</th>
+                    <th>Niveau d'études</th>
+                    <th>Filière</th>
+                    <th>Spécialité</th>
                     <th>Adresse</th>
                     <th>Numéro de téléphone</th>
                     <th>Adresse e-mail</th>
+                    <th>Âge</th>
+                    <th>Domaine intéressé</th>
+                    <th>Description du projet professionnel</th>
+                    <th>Exigences pour le stage</th>
                     <th>Modifier</th>
                     <th>Supprimer</th>
                 </tr>
@@ -44,10 +53,19 @@
                 @forelse ($contacts as $contact)
                     <tr>
                         <td>{{$contact->id}}</td>
-                        <td>{{ $contact->name }}</td>
+                        <td>{{ $contact->first_name }}</td>
+                        <td>{{ $contact->last_name }}</td>
+                        <td>{{ $contact->gender }}</td>
+                        <td>{{ $contact->education_level }}</td>
+                        <td>{{ $contact->field }}</td>
+                        <td>{{ $contact->specialization }}</td>
                         <td>{{ $contact->address }}</td>
                         <td>{{ $contact->phone_number }}</td>
                         <td>{{ $contact->email }}</td>
+                        <td>{{ $contact->age }}</td>
+                        <td>{{ $contact->interests }}</td>
+                        <td>{{ $contact->career_project }}</td>
+                        <td>{{ $contact->stage_requirements }}</td>
                         <td> 
                             <a href="{{route('contacts.edit', ['id'=> $contact])}}" class="btn btn-primary">Modifier</a>
                         </td>
@@ -61,7 +79,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="7">Aucun contact trouvé.</td>
+                        <td colspan="15">Aucun contact trouvé.</td>
                     </tr>
                 @endforelse
             </tbody>
