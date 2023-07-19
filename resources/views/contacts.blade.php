@@ -26,64 +26,58 @@
     </div>
 
     <div class="container">
-        <h1>Liste des contacts :</h1>
+        <h1 class="text-center">Liste des contacts :</h1>
         <a href="{{route('contacts.create')}}" class="btn btn-primary">Ajouter un contact</a>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Prénom</th>
-                    <th>Nom</th>
-                    <th>Sexe</th>
-                    <th>Niveau d'études</th>
-                    <th>Filière</th>
-                    <th>Spécialité</th>
-                    <th>Adresse</th>
-                    <th>Numéro de téléphone</th>
-                    <th>Adresse e-mail</th>
-                    <th>Âge</th>
-                    <th>Domaine intéressé</th>
-                    <th>Description du projet professionnel</th>
-                    <th>Exigences pour le stage</th>
-                    <th>Modifier</th>
-                    <th>Supprimer</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($contacts as $contact)
+        <div class="table-responsive">
+            <table class="table table-bordered mt-4">
+                <thead>
                     <tr>
-                        <td>{{$contact->id}}</td>
-                        <td>{{ $contact->first_name }}</td>
-                        <td>{{ $contact->last_name }}</td>
-                        <td>{{ $contact->gender }}</td>
-                        <td>{{ $contact->education_level }}</td>
-                        <td>{{ $contact->field }}</td>
-                        <td>{{ $contact->specialization }}</td>
-                        <td>{{ $contact->address }}</td>
-                        <td>{{ $contact->phone_number }}</td>
-                        <td>{{ $contact->email }}</td>
-                        <td>{{ $contact->age }}</td>
-                        <td>{{ $contact->interests }}</td>
-                        <td>{{ $contact->career_project }}</td>
-                        <td>{{ $contact->stage_requirements }}</td>
-                        <td> 
-                            <a href="{{route('contacts.edit', ['id'=> $contact])}}" class="btn btn-primary">Modifier</a>
-                        </td>
-                        <td>
-                            <form action="{{route('contacts.destroy', ['id'=> $contact])}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" value="delete">Supprimer</button>
-                            </form>
-                        </td>
+                        <th>ID</th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Sexe</th>
+                        <th>Niveau d'études</th>
+                        <th>Filière</th>
+                        <th>Spécialité</th>
+                        <th>Adresse</th>
+                        <th>Numéro de téléphone</th>
+                        <th>Adresse e-mail</th>
+                        <th>Âge</th>
+                        <th>Domaine intéressé</th>
+                        <th>Description du projet professionnel</th>
+                        <th>Exigences pour le stage</th>
+                        <th>Modifier</th>
                     </tr>
-                @empty
-                    <tr>
-                        <td colspan="15">Aucun contact trouvé.</td>
-                    </tr>
-                @endforelse
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @forelse ($contacts as $contact)
+                        <tr>
+                            <td>{{$contact->id}}</td>
+                            <td>{{ $contact->first_name }}</td>
+                            <td>{{ $contact->last_name }}</td>
+                            <td>{{ $contact->gender }}</td>
+                            <td>{{ $contact->education_level }}</td>
+                            <td>{{ $contact->field }}</td>
+                            <td>{{ $contact->specialization }}</td>
+                            <td>{{ $contact->address }}</td>
+                            <td>{{ $contact->phone_number }}</td>
+                            <td>{{ $contact->email }}</td>
+                            <td>{{ $contact->age }}</td>
+                            <td>{{ $contact->interests }}</td>
+                            <td>{{ $contact->career_project }}</td>
+                            <td>{{ $contact->stage_requirements }}</td>
+                            <td> 
+                                <a href="{{route('contacts.edit', ['id'=> $contact])}}" class="btn btn-primary">Modifier</a>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="15">Aucun contact trouvé.</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-LF8soMnrwF6tc0GLA/VxF4uLx2IBFZXOXtgQxUYv1n3aohVRVlpisJOGGFjnxLCo" crossorigin="anonymous"></script>

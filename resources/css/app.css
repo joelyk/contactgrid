@@ -1,0 +1,73 @@
+/* CSS pour la barre de progression */
+.progress {
+    height: 10px;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    background-color: #007bff;
+}
+
+/* CSS pour masquer les étapes non actives du formulaire */
+.form-step:not(.active) {
+    display: none;
+}
+
+
+
+
+
+
+/* :root {
+    --primary-color : red;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+label{
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+input {
+    display: block;
+    width : 100%;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+}
+
+.form {
+    width: clamp(320px, 30px, 430px);
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+}
+
+.form-group{
+    margin: 2rem 0;
+}
+
+.btn {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+    text-align: center;
+}
